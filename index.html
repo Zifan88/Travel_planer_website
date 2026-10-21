@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Discover beautiful travel destinations and plan your next adventure with Travelora.">
+
+    <title>Travelora | Discover Your Next Adventure</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#home" class="logo">Travelora<span>.</span></a>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#my-trips">My Trip Plans <span id="tripCount">0</span></a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-button" id="themeToggle"
+                aria-label="Toggle dark mode" title="Toggle theme">☾</button>
+
+            <button class="nav-button" id="favoritesToggle">
+                ♥ Favorites <span id="favoriteCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="eyebrow">✦ DISCOVER · EXPLORE · EXPERIENCE</span>
+
+                <h1>
+                    Discover places<br>
+                    <span>worth remembering.</span>
+                </h1>
+
+                <p>
+                    Find extraordinary destinations, collect beautiful
+                    memories, and plan your next unforgettable adventure.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#destinations" class="primary-button">
+                        Explore destinations <span>→</span>
+                    </a>
+                    <a href="#about" class="secondary-button">Our story</a>
+                </div>
+
+                <div class="hero-note">
+                    <span class="note-dot"></span>
+                    Your next adventure starts here
+                </div>
+            </div>
+
+            <div class="hero-bottom">
+                <span>EXPLORE BEYOND THE ORDINARY</span>
+                <a href="#destinations" aria-label="Scroll to destinations">↓</a>
+            </div>
+        </section>
+
+        <!-- Destinations -->
+        <section class="destinations section" id="destinations">
+            <div class="section-header">
+                <div>
+                    <span class="section-tag">YOUR NEXT ADVENTURE</span>
+                    <h2>Places you'll fall for<span>.</span></h2>
+                </div>
+
+                <p>From peaceful beaches to vibrant cities, find a place
+                    that feels like it was made for you.</p>
+            </div>
+
+            <div class="destination-tools">
+                <label class="search-box">
+                    <span aria-hidden="true">⌕</span>
+                    <input id="searchInput" type="search"
+                        placeholder="Search places, countries..."
+                        aria-label="Search destinations">
+                </label>
+
+                <button class="text-button" id="clearFilters">Clear filters ↗</button>
+            </div>
+
+            <div class="categories" aria-label="Filter by category">
+                <button class="category-button active" data-category="All">All places</button>
+                <button class="category-button" data-category="City">City</button>
+                <button class="category-button" data-category="Beach">Beach</button>
+                <button class="category-button" data-category="Mountain">Mountain</button>
+                <button class="category-button" data-category="Nature">Nature</button>
+            </div>
+
+            <p class="results-label" id="resultsLabel" aria-live="polite"></p>
+
+            <div class="destination-grid" id="destinationGrid"></div>
+        </section>
+
+        <!-- Saved trip plans -->
+        <section class="my-trips section" id="my-trips">
+            <div class="section-header">
+                <div>
+                    <span class="section-tag">YOUR SAVED ADVENTURES</span>
+                    <h2>My trip plans<span>.</span></h2>
+                </div>
+                <p>Your trip plans are saved in this browser so you can find them whenever you return.</p>
+            </div>
+
+            <div class="trip-reminder" id="tripReminder" role="status" hidden>
+                <span class="trip-reminder-icon" aria-hidden="true">✈</span>
+                <div>
+                    <strong id="reminderTitle"></strong>
+                    <p id="reminderMessage"></p>
+                </div>
+            </div>
+
+            <div class="trip-list-tools">
+                <p>Plans are saved in this browser. Departure countdowns update automatically whenever you return. Browser notifications are checked while this app is open.</p>
+                <button class="secondary-action" id="enableReminders" type="button">
+                    Enable browser reminders
+                </button>
+            </div>
+
+            <div class="planned-trips" id="plannedTrips"></div>
+        </section>
+
+        <!-- About -->
+        <section class="about section" id="about">
+            <div class="about-image">
+                <img src="santorino.jpg.png"
+                    alt="White buildings overlooking the sea in Santorini"
+                    loading="lazy">
+                <div class="image-caption">
+                    <span>THE WORLD IS WAITING</span>
+                    <strong>Make room for wonder.</strong>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <span class="section-tag">THE TRAVELORA STORY</span>
+                <h2>It's not just where you go. It's how it makes you feel.</h2>
+                <p>
+                    Travelora is a simple way to discover inspiring places,
+                    explore travel ideas, and organize your next getaway.
+                    Your next great memory could start with one click.
+                </p>
+
+                <div class="stats">
+                    <div><strong>05</strong><span>Featured places</span></div>
+                    <div><strong>01</strong><span>Next adventure</span></div>
+                    <div><strong>∞</strong><span>Memories to make</span></div>
+                </div>
+
+                <a href="#destinations" class="primary-button">
+                    Find your destination <span>→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Trip planner call to action -->
+        <section class="trip-cta">
+            <div>
+                <span class="section-tag">SOMETHING TO LOOK FORWARD TO</span>
+                <h2>Your next chapter could start anywhere.</h2>
+                <p>Choose a destination and start shaping your travel plan.</p>
+            </div>
+            <a href="#destinations" class="cta-button">Let's plan a trip ↗</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div>
+                <a href="#home" class="logo footer-logo">Travelora<span>.</span></a>
+                <p>Explore the world. One destination at a time.</p>
+            </div>
+            <a href="#home" class="back-top">Back to top ↑</a>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Travelora. A frontend learning project.</span>
+            <span>Made with HTML, CSS & JavaScript</span>
+        </div>
+    </footer>
+
+    <!-- Destination details modal -->
+    <div class="modal" id="detailsModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
+
+        <section class="modal-content" role="dialog"
+            aria-modal="true" aria-labelledby="modalTitle">
+
+            <button class="close-modal" data-close-modal
+                aria-label="Close destination details">×</button>
+
+            <div class="modal-gallery">
+                <img id="modalImage" src="" alt="">
+
+                <div class="gallery-thumbnails" id="galleryThumbnails"></div>
+            </div>
+
+            <div class="modal-body">
+                <span class="section-tag" id="modalCategory"></span>
+                <h2 id="modalTitle"></h2>
+
+                <div class="modal-meta">
+                    <span id="modalRating"></span>
+                </div>
+
+                <p id="modalDescription"></p>
+
+                <div class="travel-info">
+                    <div><span>☀ Best time</span><strong id="modalBestTime"></strong></div>
+                    <div><span>🌡 Temperature</span><strong id="modalTemperature"></strong></div>
+                    <div><span>◷ Suggested stay</span><strong id="modalDuration"></strong></div>
+                </div>
+
+                <h3 class="experiences-heading">Popular experiences</h3>
+                <div class="experience-list" id="modalExperiences"></div>
+
+                <div class="modal-actions">
+                    <button class="secondary-action" id="modalFavorite">
+                        ♡ Add to favorites
+                    </button>
+                    <button class="primary-button" id="openPlanner">
+                        Plan this trip <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Trip planner modal -->
+    <div class="modal" id="plannerModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
+
+        <section class="modal-content planner-content" role="dialog"
+            aria-modal="true" aria-labelledby="plannerTitle">
+
+            <button class="close-modal" data-close-modal
+                aria-label="Close trip planner">×</button>
+
+            <div class="planner-inner">
+                <span class="section-tag">YOUR NEXT ADVENTURE</span>
+                <h2 id="plannerTitle">Let's plan your trip<span>.</span></h2>
+                <p class="planner-intro">
+                    Fill in a few details to create your personal trip plan.
+                </p>
+
+                <form id="tripForm">
+                    <label>
+                        Your name
+                        <input type="text" id="travelerName"
+                            placeholder="Enter your name" required maxlength="60">
+                    </label>
+
+                    <label>
+                        Destination
+                        <input type="text" id="tripDestination" readonly>
+                    </label>
+
+                    <div class="form-row">
+                        <label>
+                            Departure date
+                            <input type="date" id="tripDate" required>
+                        </label>
+
+                        <label>
+                            Return date
+                            <input type="date" id="returnDate" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Travelers
+                            <select id="travelerCount">
+                                <option value="1">1 traveler</option>
+                                <option value="2" selected>2 travelers</option>
+                                <option value="3">3 travelers</option>
+                                <option value="4">4 travelers</option>
+                                <option value="5">5+ travelers</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <fieldset class="planner-options">
+                        <legend>Hotel booking</legend>
+                        <label class="option-toggle">
+                            <input type="checkbox" id="hotelIncluded">
+                            <span>Include an estimated hotel stay</span>
+                        </label>
+                        <label id="hotelCategoryField" hidden>
+                            Hotel category
+                            <select id="hotelCategory">
+                                <option value="budget">Comfortable budget</option>
+                                <option value="standard" selected>Mid-range</option>
+                                <option value="premium">Premium</option>
+                            </select>
+                        </label>
+                    </fieldset>
+
+                    <fieldset class="planner-options">
+                        <legend>Car rental</legend>
+                        <label class="option-toggle">
+                            <input type="checkbox" id="carIncluded">
+                            <span>Include an estimated rental car</span>
+                        </label>
+                        <label id="carCategoryField" hidden>
+                            Car category
+                            <select id="carCategory">
+                                <option value="economy">Economy</option>
+                                <option value="comfort" selected>Comfort</option>
+                                <option value="suv">SUV</option>
+                            </select>
+                        </label>
+                    </fieldset>
+
+                    <label>
+                        Notes (optional)
+                        <textarea id="tripNotes" rows="3"
+                            placeholder="Any places or activities you have in mind?"
+                            maxlength="500"></textarea>
+                    </label>
+
+                    <section class="estimate-preview" aria-live="polite">
+                        <h3>Estimated trip cost</h3>
+                        <div id="estimatePreview"></div>
+                        <p>All amounts are estimated in USD. Actual prices vary by dates, availability, and provider.</p>
+                    </section>
+
+                    <button class="primary-button submit-button" type="submit">
+                        <span id="submitPlanLabel">Create my trip plan</span> <span>→</span>
+                    </button>
+                </form>
+
+                <div class="success-message" id="tripSuccess"
+                    role="status" hidden>
+                    <span class="success-icon">✓</span>
+                    <h3>Your trip plan is ready!</h3>
+                    <p id="successSummary"></p>
+                    <p class="small-note">
+                        Your complete trip plan is saved in this browser.
+                    </p>
+                    <button type="button" class="primary-button"
+                        id="showSavedPlan">Show My Plan →</button>
+                    <button type="button" class="secondary-action"
+                        id="closeSuccess">View my trips</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Saved plan details -->
+    <div class="modal" id="planDetailsModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
+        <section class="modal-content plan-details-content" role="dialog"
+            aria-modal="true" aria-labelledby="planDetailsTitle">
+            <button class="close-modal" data-close-modal
+                aria-label="Close trip plan">×</button>
+            <div class="plan-details-hero">
+                <img id="planDetailsImage" src="" alt="">
+                <span class="plan-details-countdown" id="planDetailsCountdown"></span>
+            </div>
+            <div class="plan-details-body">
+                <span class="section-tag">YOUR TRIP ITINERARY</span>
+                <h2 id="planDetailsTitle"></h2>
+                <div class="plan-summary-grid" id="planSummaryGrid"></div>
+                <section class="cost-breakdown">
+                    <h3>Estimated cost breakdown</h3>
+                    <div id="planCostBreakdown"></div>
+                    <div class="estimated-total">
+                        <span>Total estimated trip cost</span>
+                        <strong id="planEstimatedTotal"></strong>
+                    </div>
+                    <p>All amounts are estimated in USD; actual costs may vary by dates, availability, and provider.</p>
+                </section>
+                <div class="plan-details-actions">
+                    <button class="secondary-action" id="editDetailsPlan" type="button">Edit plan</button>
+                    <button class="primary-button" data-close-modal type="button">Done</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
